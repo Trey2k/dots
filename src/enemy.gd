@@ -13,7 +13,7 @@ onready var gameState = get_node("/root/GameState")
 onready var MAXSIZE = gameState.getPlayerSize()+20
 onready var MINSIZE = gameState.getPlayerSize()-20
 
-const HMAXSIZE = 100
+const HMAXSIZE = 140
 const HMINSIZE = 8
 const MAXSPEED = 250
 const MINSPEED = 25

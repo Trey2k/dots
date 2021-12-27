@@ -28,11 +28,12 @@ func _on_Hitbox_area_entered(area):
 	if collider.has_method("getSize"):
 		var dotSize = collider.getSize()
 		if size >= dotSize:
-			size += sizeIncrease
-			$Hitbox/Shape.shape.radius = size
-			gameState.setPlayerSize(size)
-			collider.destroy()
-			get_parent().addKill()
+			if size <= 100:
+				size += sizeIncrease
+				$Hitbox/Shape.shape.radius = size
+				gameState.setPlayerSize(size)
+				collider.destroy()
+				get_parent().addKill()
 		else:
 			emit_signal("died")
 			queue_free()
